@@ -1,0 +1,10 @@
+services:
+  tcpproxy:
+    image: ghcr.io/casterlabs/tcp-proxy:latest
+    restart: always
+    environment:
+      - SO_TIMEOUT=30000
+      - TARGET_ADDR=example.com
+      - TARGET_PORT=80
+    ports:
+      - 8000:8080
